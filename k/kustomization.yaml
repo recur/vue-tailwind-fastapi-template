@@ -4,6 +4,5 @@ kind: Kustomization
 namespace: excalibrator
 
 resources:
-  - namespace.yaml
   - deployment.yaml
   - service.yaml

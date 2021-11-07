@@ -1,5 +1,7 @@
 analytics_settings(False)
 
+k8s_yaml('namespace.yaml')
+
 k8s_yaml(kustomize('k'))
 
 docker_build('excalibrator', 'web',
