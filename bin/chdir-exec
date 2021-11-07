@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+function main {
+  set -exfu
+
+  local d="$1"; shift
+
+  cd "$d"
+  exec npx "$@"
+}
+
+main "$@"

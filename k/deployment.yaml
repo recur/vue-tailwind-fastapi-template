@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hanbaiki
+  labels:
+    app: hanbaiki
+spec:
+  selector:
+    matchLabels:
+      app: hanbaiki
+  template:
+    metadata:
+      labels:
+        app: hanbaiki
+    spec:
+      containers:
+        - name: hanbaiki
+          image: hanbaiki
+          ports:
+            - name: hanbaiki
+              containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hanbaiki-web
+  labels:
+    app: hanbaiki-web
+spec:
+  selector:
+    matchLabels:
+      app: hanbaiki-web
+  template:
+    metadata:
+      labels:
+        app: hanbaiki-web
+    spec:
+      containers:
+        - name: hanbaiki-web
+          image: hanbaiki-web
+          ports:
+            - name: hanbaiki-web
+              containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hanbaiki-api
+  labels:
+    app: hanbaiki-api
+spec:
+  selector:
+    matchLabels:
+      app: hanbaiki-api
+  template:
+    metadata:
+      labels:
+        app: hanbaiki-api
+    spec:
+      containers:
+        - name: hanbaiki-api
+          image: hanbaiki-api
+          ports:
+            - name: hanbaiki-api
+              containerPort: 8000
