@@ -2,15 +2,15 @@ analytics_settings(False)
 
 k8s_yaml(kustomize('k'))
 
-docker_build('excalibrator', 'front',
+docker_build('excalibrator', 'web',
   live_update=[
-    sync('front', '/app'),
+    sync('web', '/app'),
   ]
 )
 
-docker_build('excalibrator-web', 'front/dist',
+docker_build('excalibrator-web', 'web/dist',
   live_update=[
-    sync('front/dist', '/usr/share/nginx/html'),
+    sync('web/dist', '/usr/share/nginx/html'),
   ]
 )
 
@@ -25,4 +25,4 @@ load('ext://uibutton', 'cmd_button', 'location')
 cmd_button(name='build for web',
           icon_name='build',
           resource='excalibrator',
-          argv=['bin/chdir-exec', 'front', 'vite', 'build'])
+          argv=['bin/chdir-exec', 'web', 'vite', 'build'])
