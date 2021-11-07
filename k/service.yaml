@@ -6,10 +6,10 @@ metadata:
     app: excalibrator
 spec:
   ports:
-    - name: excalibrator
+    - name: vite
       port: 3000
       protocol: TCP
-      targetPort: excalibrator
+      targetPort: vite
   selector:
     app: excalibrator
   type: ClusterIP
@@ -22,10 +22,10 @@ metadata:
     app: excalibrator-web
 spec:
   ports:
-    - name: excalibrator-web
+    - name: nginx
       port: 80
       protocol: TCP
-      targetPort: excalibrator-web
+      targetPort: nginx
   selector:
     app: excalibrator-web
   type: ClusterIP
@@ -38,10 +38,10 @@ metadata:
     app: excalibrator-api
 spec:
   ports:
-    - name: excalibrator-api
+    - name: hypercorn
       port: 80
       protocol: TCP
-      targetPort: excalibrator-api
+      targetPort: hypercorn
   selector:
     app: excalibrator-api
   type: ClusterIP

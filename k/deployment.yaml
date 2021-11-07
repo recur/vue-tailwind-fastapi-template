@@ -17,7 +17,7 @@ spec:
         - name: excalibrator
           image: excalibrator
           ports:
-            - name: excalibrator
+            - name: vite
               containerPort: 3000
 ---
 apiVersion: apps/v1
@@ -39,7 +39,7 @@ spec:
         - name: excalibrator-web
           image: excalibrator-web
           ports:
-            - name: excalibrator-web
+            - name: nginx
               containerPort: 80
 ---
 apiVersion: apps/v1
@@ -61,5 +61,5 @@ spec:
         - name: excalibrator-api
           image: excalibrator-api
           ports:
-            - name: excalibrator-api
+            - name: hypercorn
               containerPort: 8000
