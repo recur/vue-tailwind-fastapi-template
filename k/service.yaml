@@ -1,47 +1,47 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hanbaiki
+  name: excalibrator
   labels:
-    app: hanbaiki
+    app: excalibrator
 spec:
   ports:
-    - name: hanbaiki
+    - name: excalibrator
       port: 3000
       protocol: TCP
-      targetPort: hanbaiki
+      targetPort: excalibrator
   selector:
-    app: hanbaiki
+    app: excalibrator
   type: ClusterIP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: hanbaiki-web
+  name: excalibrator-web
   labels:
-    app: hanbaiki-web
+    app: excalibrator-web
 spec:
   ports:
-    - name: hanbaiki-web
+    - name: excalibrator-web
       port: 80
       protocol: TCP
-      targetPort: hanbaiki-web
+      targetPort: excalibrator-web
   selector:
-    app: hanbaiki-web
+    app: excalibrator-web
   type: ClusterIP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: hanbaiki-api
+  name: excalibrator-api
   labels:
-    app: hanbaiki-api
+    app: excalibrator-api
 spec:
   ports:
-    - name: hanbaiki-api
+    - name: excalibrator-api
       port: 80
       protocol: TCP
-      targetPort: hanbaiki-api
+      targetPort: excalibrator-api
   selector:
-    app: hanbaiki-api
+    app: excalibrator-api
   type: ClusterIP

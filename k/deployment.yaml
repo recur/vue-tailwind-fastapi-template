@@ -1,65 +1,65 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hanbaiki
+  name: excalibrator
   labels:
-    app: hanbaiki
+    app: excalibrator
 spec:
   selector:
     matchLabels:
-      app: hanbaiki
+      app: excalibrator
   template:
     metadata:
       labels:
-        app: hanbaiki
+        app: excalibrator
     spec:
       containers:
-        - name: hanbaiki
-          image: hanbaiki
+        - name: excalibrator
+          image: excalibrator
           ports:
-            - name: hanbaiki
+            - name: excalibrator
               containerPort: 3000
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hanbaiki-web
+  name: excalibrator-web
   labels:
-    app: hanbaiki-web
+    app: excalibrator-web
 spec:
   selector:
     matchLabels:
-      app: hanbaiki-web
+      app: excalibrator-web
   template:
     metadata:
       labels:
-        app: hanbaiki-web
+        app: excalibrator-web
     spec:
       containers:
-        - name: hanbaiki-web
-          image: hanbaiki-web
+        - name: excalibrator-web
+          image: excalibrator-web
           ports:
-            - name: hanbaiki-web
+            - name: excalibrator-web
               containerPort: 80
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hanbaiki-api
+  name: excalibrator-api
   labels:
-    app: hanbaiki-api
+    app: excalibrator-api
 spec:
   selector:
     matchLabels:
-      app: hanbaiki-api
+      app: excalibrator-api
   template:
     metadata:
       labels:
-        app: hanbaiki-api
+        app: excalibrator-api
     spec:
       containers:
-        - name: hanbaiki-api
-          image: hanbaiki-api
+        - name: excalibrator-api
+          image: excalibrator-api
           ports:
-            - name: hanbaiki-api
+            - name: excalibrator-api
               containerPort: 8000

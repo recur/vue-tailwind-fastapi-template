@@ -2,19 +2,19 @@ analytics_settings(False)
 
 k8s_yaml(kustomize('k'))
 
-docker_build('hanbaiki', 'front',
+docker_build('excalibrator', 'front',
   live_update=[
     sync('front', '/app'),
   ]
 )
 
-docker_build('hanbaiki-web', 'front/dist',
+docker_build('excalibrator-web', 'front/dist',
   live_update=[
     sync('front/dist', '/usr/share/nginx/html'),
   ]
 )
 
-docker_build('hanbaiki-api', 'api',
+docker_build('excalibrator-api', 'api',
   live_update=[
     sync('api', '/app'),
   ]
@@ -24,5 +24,5 @@ load('ext://uibutton', 'cmd_button', 'location')
 
 cmd_button(name='build for web',
           icon_name='build',
-          resource='hanbaiki',
+          resource='excalibrator',
           argv=['bin/chdir-exec', 'front', 'vite', 'build'])
